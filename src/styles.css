@@ -1,0 +1,149 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Techno design system.
+ * Brand palette (exact, from the brand guidelines):
+ *   Deep Teal      #003135  oklch(0.285 0.049 203.5)
+ *   Dark Teal      #024950  oklch(0.371 0.063 205.9)
+ *   Terracotta     #964734  oklch(0.495 0.111 34.7)
+ *   Vibrant Cyan   #0FA4AF  oklch(0.656 0.110 203.4)
+ *   Light Aqua     #AFDDE5  oklch(0.868 0.049 209.3)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* Techno brand tokens */
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-deep: var(--brand-deep);
+  --color-promo: var(--promo);
+  --color-promo-foreground: var(--promo-foreground);
+  --color-aqua: var(--aqua);
+  --color-aqua-soft: var(--aqua-soft);
+  --color-sale: var(--sale);
+  --font-sans: "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.988 0.003 205);
+  --foreground: oklch(0.26 0.04 204);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.04 204);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.04 204);
+  --primary: oklch(0.656 0.11 203.4);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.371 0.063 205.9);
+  --secondary-foreground: oklch(0.98 0.005 200);
+  --muted: oklch(0.955 0.014 205);
+  --muted-foreground: oklch(0.47 0.035 205);
+  --accent: oklch(0.868 0.049 209.3);
+  --accent-foreground: oklch(0.285 0.049 203.5);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.005 200);
+  --border: oklch(0.905 0.02 205);
+  --input: oklch(0.905 0.02 205);
+  --ring: oklch(0.656 0.11 203.4);
+  /* brand */
+  --brand: oklch(0.656 0.11 203.4);          /* #0FA4AF */
+  --brand-deep: oklch(0.285 0.049 203.5);    /* #003135 */
+  --brand-dark: oklch(0.371 0.063 205.9);    /* #024950 */
+  --promo: oklch(0.495 0.111 34.7);          /* #964734 */
+  --promo-foreground: oklch(0.985 0.01 60);
+  --aqua: oklch(0.868 0.049 209.3);          /* #AFDDE5 */
+  --aqua-soft: oklch(0.955 0.03 206);
+  --sale: oklch(0.495 0.111 34.7);
+}
+
+.dark {
+  --background: oklch(0.22 0.04 204);
+  --foreground: oklch(0.95 0.01 205);
+  --card: oklch(0.28 0.045 204);
+  --card-foreground: oklch(0.95 0.01 205);
+  --popover: oklch(0.28 0.045 204);
+  --popover-foreground: oklch(0.95 0.01 205);
+  --primary: oklch(0.7 0.11 203.4);
+  --primary-foreground: oklch(0.2 0.04 204);
+  --secondary: oklch(0.33 0.05 205);
+  --secondary-foreground: oklch(0.95 0.01 205);
+  --muted: oklch(0.33 0.05 205);
+  --muted-foreground: oklch(0.72 0.04 205);
+  --accent: oklch(0.35 0.05 205);
+  --accent-foreground: oklch(0.95 0.01 205);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.98 0.005 200);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.11 203.4);
+  --brand: oklch(0.7 0.11 203.4);
+  --brand-deep: oklch(0.2 0.04 203.5);
+  --brand-dark: oklch(0.3 0.05 205.9);
+  --promo: oklch(0.56 0.11 34.7);
+  --promo-foreground: oklch(0.985 0.01 60);
+  --aqua: oklch(0.868 0.049 209.3);
+  --aqua-soft: oklch(0.32 0.05 206);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility section-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+@utility price-tag {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
